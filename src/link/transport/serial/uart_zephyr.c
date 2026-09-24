@@ -16,7 +16,11 @@
 
 #if Z_FEATURE_LINK_SERIAL == 1 && defined(ZENOH_ZEPHYR)
 
+#if defined(__has_include) && __has_include(<zephyr/version.h>)
+#include <zephyr/version.h>
+#else
 #include <version.h>
+#endif
 
 #if KERNEL_VERSION_MAJOR == 2
 #include <drivers/uart.h>

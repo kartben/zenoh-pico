@@ -15,7 +15,11 @@
 #ifndef ZENOH_PICO_SYSTEM_ZEPHYR_TYPES_H
 #define ZENOH_PICO_SYSTEM_ZEPHYR_TYPES_H
 
+#if defined(__has_include) && __has_include(<zephyr/version.h>)
+#include <zephyr/version.h>
+#else
 #include <version.h>
+#endif
 
 #if KERNEL_VERSION_MAJOR == 2
 #include <kernel.h>
